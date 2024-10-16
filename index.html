@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #0073e6;
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 5px;
+        }
+        .faq-section {
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .faq-question {
+            cursor: pointer;
+            color: #0073e6;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            color: #333;
+        }
+        .faq-question:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IT Support FAQ</h1>
+    </header>
+    <div class="container">
+        <input type="text" class="search-bar" placeholder="Search for answers...">
+
+        <div class="faq-section">
+            <h2>General Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">How do I reset my password? <span>&#x25BC;</span></h3>
+                <div class="faq-answer">
+                    <p>To reset your password, go to the login page and click on "Forgot Password." Follow the instructions to receive a reset link in your email.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Why is my internet connection slow? <span>&#x25BC;</span></h3>
+                <div class="faq-answer">
+                    <p>Slow internet can be caused by several factors including network congestion, outdated hardware, or signal interference. Try restarting your router or contacting IT support for further assistance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Software Issues</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">How do I install the company VPN? <span>&#x25BC;</span></h3>
+                <div class="faq-answer">
+                    <p>Download the VPN client from the company intranet. Install the software and enter your login credentials provided by IT support to connect to the VPN.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What to do if my application crashes? <span>&#x25BC;</span></h3>
+                <div class="faq-answer">
+                    <p>If an application crashes, try restarting it. If the issue persists, check for software updates or contact IT support for further troubleshooting.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                item.querySelector('span').textContent = answer.style.display === 'block' ? '▲' : '▼';
+            });
+        });
+    </script>
+</body>
+</html>
